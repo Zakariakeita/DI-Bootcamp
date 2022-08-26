@@ -1,0 +1,48 @@
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 950px;
+    margin-left: 100px;
+   
+}
+nav{
+    background-color: rgb(196, 196, 189);
+    height: 116vh;
+    flex: 0.8;
+    padding: 20px;
+    
+    
+}
+main{
+    flex: 3;
+    display: block;
+    display: grid;
+    grid-row-gap:0px;
+   padding-left: 20px;
+   text-align: justify ;
+}
+
+.profil{
+    border-radius: 70px;
+}
+.icone{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 90px;
+    
+}
+.name{
+    padding-top: 30px;
+    display: block;
+    text-align: center;
+}
+i{
+    font-size: 24px;
+}
+.div3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
