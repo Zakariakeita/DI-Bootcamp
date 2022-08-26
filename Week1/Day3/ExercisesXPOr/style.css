@@ -1,49 +1,28 @@
-
-.center{
+main{
     display: flex;
     justify-content: center;
+    
+ 
+    
 }
-.gauche{
-    background-color: rgb(245, 241, 241);
+section{
+    background-image: url("img.jpg");
+    width: 80%;
    
-    padding-top: 30px;
-    padding-bottom: 20px;
 }
-.droite{
-    text-align: right;
-    background-color: rgb(110, 35, 180);
-    width: 300px;
-    text-align: center;
-    padding-top: 100px;
+h1{
+   text-align: center;
 }
-.log{
-    text-align: center;
-    font-weight: bold;
-    font-size: 27px;
-}
-.mydiv{
-   
-    text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-.myinput{
-    width: 220px;
-    height: 23px;
-} 
-.btn1{
-    background-color: rgb(110, 35, 180);
-    height: 23px;
-    width: 220px;
-    border: none;
-    color: white;
+.chiffre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.btn2{
-    background-color: rgb(110, 35, 180); 
-    border: 1px solid black;
-     border-radius: 8px;
-     color: white;
-     height: 34px;
-     font-size: 15px;
+.centre{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 50px;
 }
