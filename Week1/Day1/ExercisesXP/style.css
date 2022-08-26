@@ -1,0 +1,58 @@
+
+.lien1{
+    font-size: 12px;
+}
+.lion{
+    color: blue;
+}
+.companionship{
+    font-weight: bold;
+}
+.seventy{
+    background-color: yellow;
+}
+.cat{
+    margin-left: 30px;
+    text-decoration: underline;
+}
+.lienMar{
+    margin-left: 20px;
+}
+.num{
+    list-style-type: upper-roman;
+}
+
+.media{
+    text-align: center;
+}
+.table1{
+    display: flex;
+    border: 1px solid red;
+    justify-content: center;
+    color: red;
+    margin-left: 230px;
+    margin-right: 230px;
+
+
+}
+.table2{
+    display: flex;
+    justify-content: center;
+    
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+.table21{
+    
+    border: 1px solid black;
+
+}
+.table22{
+    
+    border: 1px solid black;
+    padding: 15px ;
+
+}
+

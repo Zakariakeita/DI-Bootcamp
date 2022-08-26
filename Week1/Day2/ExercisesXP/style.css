@@ -1,0 +1,39 @@
+header{
+    background-color: black;
+    display: block;
+    height: 50px;
+}
+header span{
+    float: right;
+    color: white;
+    padding-top: 15px;
+    padding-right: 25px;
+    font-family:'Times New Roman', serif;
+}
+
+footer{
+    background-color: black;
+    display: block;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ .span1{
+    float: left;
+    color: white;
+    padding-top: 15px;
+    padding-left: 25px;
+    font-family:'Times New Roman', serif;
+}
+.span2{
+    float: right;
+    color: white;
+    padding-top: 15px;
+    padding-right: 25px;
+    font-family:'Times New Roman', serif;
+}
+
+main{
+    height: 600px;
+}
