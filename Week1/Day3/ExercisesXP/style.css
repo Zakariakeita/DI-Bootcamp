@@ -2,15 +2,16 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 950px;
-    margin-left: 100px;
+    width: 60%;
+    margin-left: 10%;
    
 }
 nav{
     background-color: rgb(196, 196, 189);
-    height: 116vh;
+   
     flex: 0.8;
     padding: 20px;
+    height: 100%;
     
     
 }
@@ -45,4 +46,35 @@ i{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.myspan{
+    font-weight:bold ;
+    font-size: 15px;
+}
+
+@media only screen and (max-width:650px){
+    main{
+        font-size: 14px;
+        display: block;
+        
+        
+    }
+    .myspan{
+        font-weight:bold ;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:600px){
+    main{
+        font-size: 8px;
+        display: block;
+        
+        
+    }
+    .myspan{
+        font-weight:bold ;
+        font-size: 8px;
+    }
 }
