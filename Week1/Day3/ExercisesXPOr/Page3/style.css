@@ -1,0 +1,68 @@
+
+
+.div1{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+header{
+    height: 50px;
+    border-bottom: 1px solid rgb(190, 196, 196);
+    display: flex;
+    justify-content: space-between;
+}
+main{
+    margin-top: -14px;
+    background-color: rgb(222, 230, 238);
+    height: 900px;
+}
+.lien1{
+    margin-right: 20px;
+    text-decoration: none;
+    color: rgb(190, 196, 196);
+}
+
+.active {
+    color: rgb(13, 47, 99);
+    font-weight: bold;
+}
+a:hover{
+    color: black;
+}
+.bouton1{
+    border-color: rgb(20, 97, 212);
+    color: rgb(20, 97, 212);
+    border-radius: 3px;
+    background-color: white;
+}
+section{
+    text-align: center;
+}
+.section2{
+    display: flex;
+    justify-content: center;
+    
+    grid-column-gap:20px ;
+}
+.mydiv{
+    background-color: white;
+    width: 220px;
+}
+.bouton2{
+    background-color: rgb(54, 139, 54);
+     border: none;
+     border-radius: 4px;
+     height: 28px;
+}
+.notify{
+    background-color: rgb(107, 107, 175);
+    position: absolute;
+    bottom: 100;
+    right: 0;
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+    padding-top: 5px;
+    
+}

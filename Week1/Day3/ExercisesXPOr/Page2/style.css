@@ -1,0 +1,80 @@
+body{
+    display: grid;
+    grid-row-gap:10px;
+
+}
+header{
+    height: calc(100vh - 750px);
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+main{
+    height:720px ;
+    background-image: url("img.jpg");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+.span1{
+    color: white;
+    font-weight: bold;
+
+}
+
+.button1{
+ background-color: rgb(89, 89, 245);
+ opacity: 0.9;
+ border: none;
+ height: 30px;
+ margin-left: 15px;
+ color: white;
+ border-radius: 9px;
+}
+.button2{
+    background-color: rgb(89, 89, 245);
+    opacity: 0.9;
+    border: none;
+    height: 30px;
+    color: white;
+    border-radius: 9px;
+    padding-top: 3px;
+   }
+
+section{
+    width: 55%;
+}
+.mydiv{
+   display: flex;
+   justify-content: space-between;
+    margin: 10px
+}
+p{
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: white;
+}
+.myp{
+   margin-left: 10px;
+
+}
+input,select{
+    height: 28px;
+    border: none;
+    border-radius: 3px;
+}
+.myinput{
+    width: 97%;
+   margin: 10px;
+}
+.check{
+    margin-left: 10px;
+}
+img{
+    border-radius: 70px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
