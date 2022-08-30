@@ -1,0 +1,59 @@
+section{
+  display: flex;
+  flex-direction: row;
+  grid-column-gap:100px ;
+
+}
+
+.start div{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  
+  
+
+}
+.start{
+  display: flex;
+  flex-direction: column;
+  grid-row-gap:20px ;
+}
+
+.midle div{
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  
+  
+
+}
+.midle{
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-column-gap:80px ;
+}
+
+
+
+.end div{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  
+  
+
+}
+.end{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  grid-row-gap:20px ;
+}
