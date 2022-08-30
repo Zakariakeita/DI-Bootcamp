@@ -229,7 +229,7 @@
     // Prediction: It will output -1 because true is equal 1 and false equal 0
     // Actual: -1
 
-    console.log(!true)
+    !true
     // Prediction: It will output false because the  inverse of true is flase
     // Actual: False
 
