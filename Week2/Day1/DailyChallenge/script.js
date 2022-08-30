@@ -35,6 +35,6 @@ console.log(fruits);
 
 let moreFruits = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
 console.log("Affichage du tableaux");
-moreFruits;
+console.log(moreFruits);
 console.log("Affichage de 'Orange'");
 console.log(moreFruits[1][1][0]);
