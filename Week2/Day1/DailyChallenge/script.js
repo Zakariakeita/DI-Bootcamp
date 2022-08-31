@@ -1,3 +1,4 @@
+console.log("Daily Challenge : ");
 // EXERCISE 1
     console.log("Exercise 1 : ");
     let fruits = ["Banana", "Apples", "Oranges", "Blueberries"];

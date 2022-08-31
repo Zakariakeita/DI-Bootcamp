@@ -1,89 +1,51 @@
 //Exercise 1
     console.log("Exercise 1 : ");
    
-    5 >= 1
-    // Prediction:  It will output true because 5 is more great than 1 
-    // Actual: true
-    0 === 1
-    // Prediction:  It will output true because 0 and 1 are numbers
-    // Actual: true
-    4 <= 1
-    // Prediction:  It will output false because 4 is more great than 1 
-    // Actual: false
-    1 != 1
-    // Prediction:  It will output false because 1 is equal 1 
-    // Actual: false
-    "A" > "B"
-    // Prediction:  It will output false because in ascii code the value of B is more great than A 
-    // Actual: false
-    "B" < "C"
-    // Prediction:  It will output TRUE because in ascii code the value of C is more great than B 
-    // Actual: TRUE
-    "a" > "A"
-      // Prediction:  It will output TRUE because in ascii code the value of a is more great than A 
-    // Actual: TRUE
-    "b" < "A"
-    // Prediction:  It will output false because in ascii code the value of b is more great than A 
-    // Actual: false
-    true === false
-    // Prediction:  It will output true because true and false are booleans
-    // Actual: true
-    true != true
-    // Prediction:  It will output false because true is equal true 
-    // Actual: false
-
+    let date1=1990;
+    let date2=2005;
+    if((2022 - date2)>(parseInt((2022-date1)/2))) {
+        console.log("date à laquelle le plus jeune aura la moitié du plus agé: ");
+        console.log((date2-((2022 - date2)- (parseInt((2022-date1)/2)))));
+     }
+     else if((2022 - date2)<(parseInt((2022-date1)/2))){
+        console.log("date à laquelle le plus jeune aura la moitié du plus agé: ");
+        console.log((date2+(parseInt((2022-date1)/2))-(2022 - date2)));
+     }
+   
 //****************************************************
 //Exercise 2
-    
+console.log(typeof("1"));
     console.log("Exercise 2 : ");
-
-    let val=prompt("Entrer deux nombre separer par une virgule: ");
-    let sum= Number(val[0]) + Number(val[2]);
-    alert(val +" = "+ sum);
+    //Part 1
+    let post=prompt("Entrer code postal :");
+    if(post.length==5 && post.length==post.trim().length)
+    {
+        if( Number(post))
+        {
+            console.log("Succès "); 
+        }
+    
+        else
+        {
+            console.log("Erreur"); 
+        }   
+    }    
+    else
+    {
+        console.log("Erreur"); 
+    }
+   
 
 //****************************************************
 //Exercise 3
     
     console.log("Exercise 3 : ");
-    //Ask the user to give you a sentence containing the word “Nemo”. For example "I love the movie named Nemo"
-    let val2=prompt("Entrer une phrase contenant Nemo: ");
-    //Find the word “Nemo”
-    //Console.log a string as follows: "I found Nemo at [the position of the word Nemo]".
-    if(val2.indexOf("Nemo") !=-1) {
-       alert("I found Nemo at "+ val2.indexOf("Nemo"));
-    }
-      //If you can’t find Nemo, console.log “I can’t find Nemo”.
-    else{
-        alert("I can’t find Nemo");
-    }
-    
-    
-//****************************************************
-//Exercise 4
-alert("boum".toUpperCase());
-    console.log("Exercise 4 : ");
-    let nb= Number(prompt("Entrer un nombre: "));
-     if(nb <2)
-    {
-        alert("boum");
-    }
-    else if(nb >2){
-        if((nb%5==0) && (nb%2==0)){
-            let maj1=("b".padEnd((nb+1),"o") + "um!")
-            alert(maj1.toUpperCase() );
-        }
-        else if(nb%2==0){
-            alert("b".padEnd((nb+1),"o") + "um!" );
-        }
-        else if(nb%5==0){
-            let maj2=("b".padEnd((nb+1),"o") + "um")
-            alert(maj2.toUpperCase() );
-        }
-        else{
-            alert("b".padEnd((nb+1),"o") + "um" );
-        }
-           
-    }
-
-
+     let mot=prompt("Entrer un mot :");
+     console.log(mot.replace(/[aeiou]/gi, ''));
+     mot=mot.replace(/[a]/g,1);
+     mot=mot.replace(/[e]/g,2);    
+     mot=mot.replace(/[i]/g,3); 
+     mot=mot.replace(/[o]/g,4);
+     mot=mot.replace(/[u]/g,5);    
+     console.log(mot);
     

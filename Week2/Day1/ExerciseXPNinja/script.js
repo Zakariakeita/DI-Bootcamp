@@ -60,7 +60,6 @@
     
 //****************************************************
 //Exercise 4
-alert("boum".toUpperCase());
     console.log("Exercise 4 : ");
     let nb= Number(prompt("Entrer un nombre: "));
      if(nb <2)

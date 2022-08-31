@@ -1,40 +1,18 @@
-// EXERCISE 1
-    console.log("Exercise 1 : ");
-    let fruits = ["Banana", "Apples", "Oranges", "Blueberries"];
-    console.log("Affichage du tableaux");
-    console.log(fruits);
-
-    //Supprimez Banana de la baie.
-    fruits.shift();
-    console.log("Affichage du tableaux après suppression de 'Banana' ");
-    console.log(fruits);
-
-    //Triez le tableau par ordre alphabétique.
-    fruits.sort();
-    console.log("Affichage du tableaux après trie");
-    console.log(fruits);
-
-    //Ajoutez "Kiwi" à la fin du tableau.
-    fruits.push('Kiwi');
-    console.log("Affichage du tableaux après ajoue de 'Kiwi' ");
-    console.log(fruits);
-
-    //Supprimez "Apples" du tableau. N'utilisez pas la même méthode que dans la partie 1.
-    fruits.splice(0,1);
-    console.log("Affichage du tableaux après suppressions de 'Apples'");
-    console.log(fruits);
-
-    //Triez le tableau dans l'ordre inverse. (Pas alphabétique, mais inversez le tableau actuel, c'est-à-dire que ['a', 'c', 'b'] devient ['b', 'c', 'a'])
-    fruits.reverse();
-    console.log("Affichage du tableaux après inversion de l'ordre");
-    console.log(fruits);
-
-//************************************************************
-
-//EXERCISE 2
-    console.log("Exercise 2 : ");
-    let moreFruits = ["Banana", ["Apples", ["Oranges","violet"], "Blueberries"]];
-    console.log("Affichage du tableaux");
-    console.log(moreFruits);
-    console.log("Affichage de 'Oranges'");
-    console.log(moreFruits[1][1][0]);
+console.log("Daily Challenge : ");
+//Create a variable called sentence. The value of the variable should be a string that contains the words “not” and “bad”.
+//For example, “The movie is not that bad, I like it”.
+let sentence= "The movie is not that bad, I like it";
+//Create a variable called wordNot where it’s value is the first appearance (ie. the position) of the substring “not” (from the sentence variable).
+let wordNot= sentence.indexOf("not");
+//Create a variable called wordBad where it’s value is the first appearance (ie. the position) of the substring “bad” (from the sentence variable).
+let wordBad= sentence.indexOf("bad");
+//If the word “bad” comes after the word “not”, you should replace the whole “not…bad” substring with “good”, then console.log the result.
+//For example, the result here should be : “The movie is good, I like it”
+//If the word “bad” does not come after “not” or the words are not in the sentence, console.log the original sentence.
+if(wordBad>wordNot){
+    console.log(sentence.replace(sentence.slice(wordNot,(wordBad+3)),"good"));
+}
+else
+{
+    console.log(sentence);
+}
