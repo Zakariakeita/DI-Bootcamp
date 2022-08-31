@@ -144,11 +144,13 @@
         the: 'raindeer'
       }
     //Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
+    let phrase="";
     for(let i in details){
         
-        console.log(i + " " + details[i]);
-        
+        phrase=phrase.concat(i + " " + details[i] +" ");
+
     }
+    console.log(phrase);
 
 //****************************************************
 //Exercise 7
@@ -166,4 +168,5 @@
         
         
     }
-    console.log("Nom societé : " +  secret.split("").sort().toString().replace(/[,]/gi, ''));
+ 
+    console.log("Nom societé : " +  secret.split("").sort().join(""));
