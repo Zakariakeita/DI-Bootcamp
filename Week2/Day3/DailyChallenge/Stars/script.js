@@ -8,11 +8,13 @@ for(let i=1;i<=6;i++){
 }
 
 //Dexième methode
+
 for(let a=1; a<=6; a++)
 {
     for(let j=1; j<=a; j++)
     {
-        console.log("*");
+        console.log(("*"));
+        
     }
-    console.log("\n");
+    
 }
