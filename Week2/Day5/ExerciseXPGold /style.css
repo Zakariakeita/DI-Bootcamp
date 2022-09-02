@@ -1,0 +1,44 @@
+section{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 1.5px;
+
+}
+
+.start {
+   
+    display: flex;
+    flex-direction: row;
+    grid-column-gap: 1.5px;
+    justify-content: center;
+   
+   }
+
+.div1{
+    background-color: rgb(65, 172, 65);
+   
+   }
+   .div2{
+    background-color: rgb(224, 123, 7);
+    
+   
+   }
+   .div3{
+       
+    width: 141px;
+    height: 60px;
+    
+   
+   }
+
+   #myInput{
+       border: 1px solid black;
+       padding-top: 8px;
+       font-size: 20px;
+    width: 280px;
+    height: 35px;
+    text-align: right;
+    
+   
+   }

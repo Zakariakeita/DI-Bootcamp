@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      button {
+        width:70px;
+        height:70px;
+        color: white;
+        font-size: 17px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="start">
+      
+        <div id="myInput"  class=""></div>
+      </div>
+      <div class="start">
+        <button class="div1" type="button" name="button" onclick="number(0);">0</button>
+        <button class="div1" type="button" name="button" onclick="number(1);">1</button>
+        <button class="div1" type="button" name="button" onclick="number(2);">2</button>
+        <button class="div1" type="button" name="button" onclick="number(3);">3</button>
+    </div>
+    <div class="start">
+        <button class="div1" type="button" name="button" onclick="number(4);">4</button>
+        <button class="div1" type="button" name="button" onclick="number(5);">5</button>
+        <button class="div1" type="button" name="button" onclick="number(6);">6</button>
+        <button class="div1" type="button" name="button" onclick="number(7);">7</button>
+    </div>
+    <div class="start">
+        
+        <button class="div1" type="button" name="button" onclick="number(8);">8</button>
+        <button class="div1" type="button" name="button" onclick="number(9);">9</button>
+        <button class="div1" type="button" name="button" onclick="virgule('.');">.</button>
+        <button class="div2" type="button" name="button" onclick="operator('+');">+</button>
+    </div>
+    <div class="start">
+        
+        <button  class="div2" type="button" name="button" onclick="operator('-');">-</button>
+        <button  class="div2" type="button" name="button" onclick="operator('*');">*</button>
+        <button  class="div2" type="button" name="button" onclick="operator('/');">/</button>
+        <button  class="div2" type="button" name="button" onclick="equal();">=</button>
+    </div>
+    <div class="start start2">
+        
+      <button  class="div3" style="background-color: rgb(23, 23, 145);" type="button" name="button" onclick="reset();">Reset</button>
+      <button  class="div3" style="background-color: rgb(185, 31, 31);" type="button" name="button" onclick="clear();">Clear</button>
+      
+  </div>
+  </section>
+    <script type="text/javascript" src="script.js" charset="utf-8"></script>
+  </body>
+</html>
