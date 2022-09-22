@@ -1,7 +1,7 @@
-# ------------------------------------------------------------------- Exercise 1 : Hello World-I Love Python
+# Exercise 1 : 
 print("Hello world\n" * 4 +"I love python\n" * 4)
 
-# ------------------------------------------------------------------- Exercise 2 : What Is The Season ?
+#Exercise 2 : 
 
 month = int(input("what is  month (1 to 12). ?"))
 if month in [12,1,2] : 
