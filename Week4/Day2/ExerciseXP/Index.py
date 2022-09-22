@@ -1,5 +1,5 @@
-# -------------------------------------------------------- Exercise 1 : Set
-print ('#---------------------------------------------------Exercise 1 : Set')
+#Exercise 1 : 
+print ('Exercise 1 : ')
 my_fav_numbers=[1,12,6,20,21,7,60,0]
 print('my fav numbers = \t',end='')
 for n in my_fav_numbers:
@@ -28,9 +28,11 @@ print('\n')
 print('So our fav numbers are :',end='')
 for n in our_fav_numbers:
 	print(n," ",end='')
-# ---------------------------------------------------------------- Exercise 2: Tuple
+
+# Exercise 2: 
+
 print('\n')
-print('# ------------------------------------------------------------ Exercise 2: Tuple')
+print(' Exercise 2: ')
 mytuple=(1,2,3,4,5,6,7,8,9,0)
 print('values in my tuple are :\t ',end='')
 for n in mytuple:
@@ -39,9 +41,10 @@ for n in mytuple:
 print ('\n')
 print('A tuple is a collection which is ordered and unchangeable.so no we can\'t add anything to it ')
 
-# ---------------------------------------------------------------- Exercise 3: List
+# Exercise 3: 
+
 print('\n')
-print('# ------------------------------------------------------------ Exercise 3: List')
+print(' Exercise 3: ')
 basket = ["Banana", "Apples", "Oranges", "Blueberries"]
 print('for now there are in my bucket : ',end='')
 for item in basket:
@@ -81,11 +84,11 @@ print(f'there are {count} Apples in my bucket')
 basket.clear()
 print('the empty basket = ',basket)
 
-# ---------------------------------------------------------------- Exercise 4: Floats
+#  Exercise 4: 
 print('\n')
-print('# ------------------------------------------------------------ Exercise 4: Floats')
-print(' 1-------- a floating-point or float is a variable type that is used to store floating-point number values. A floating-point number is one where the position of the decimal point can "float" rather than being in a fixed position within a number')
-print('2------ by using random.uniform and couping with a loop')
+print(' Exercise 4: ')
+print('1- a floating-point or float is a variable type that is used to store floating-point number values. A floating-point number is one where the position of the decimal point can "float" rather than being in a fixed position within a number')
+print('2- by using random.uniform and couping with a loop')
 var=1
 let=1
 thelist=[]
@@ -102,9 +105,9 @@ for item in thelist:
 	print(item," ",end='')
 
 
-# ---------------------------------------------------------------- Exercise 5: For Loop
+# Exercise 5: 
 print('\n')
-print('# ------------------------------------------------------------Exercise 5: For Loop')
+print('Exercise 5: ')
 print('display of all numbers from 1 to 20')
 for i in range (1,21):
 	print(i," ",end='')
@@ -116,9 +119,9 @@ for i in range (1,21):
 
 
 
-# ---------------------------------------------------------------- Exercise 6 : While Loop
+# Exercise 6 : 
 print('\n')
-print('# ------------------------------------------------------------Exercise 6 : While Loop')
+print('Exercise 6 : ')
 myname='Harold'
 yourname=''
 while(yourname != myname) :
@@ -127,9 +130,9 @@ while(yourname != myname) :
 
 
 
-# ---------------------------------------------------------------- Exercise 7: Favorite Fruits
+# Exercise 7: 
 print('\n')
-print('# ------------------------------------------------------------Exercise 7: Favorite Fruits')
+print('Exercise 7: ')
 print('separate the fruits with a single space')
 fruits=input('what are your favorites fruits :\t')
 thelist=fruits.split(" ")
@@ -145,9 +148,9 @@ else :
 
 
 
-# ---------------------------------------------------------------- Exercise 8: Who Ordered A Pizza ?
+# Exercise 8: 
 print('\n')
-print('# ------------------------------------------------------------Exercise 8: Who Ordered A Pizza ?')
+print('Exercise 8: ')
 toppings=[]
 topping=''
 prize=10
@@ -166,9 +169,9 @@ while( topping !="quit"):
 
 
 
-# ---------------------------------------------------------------- Exercise 9: Cinemax
+# Exercise 9: 
 print('\n')
-print('# ------------------------------------------------------------Exercise 9: Cinemax')
+print('Exercise 9: ')
 name=['Harold','Nicodeme','Mary', 'Jeanne']
 number=int(input('how many are you ?'))
 bill=0
@@ -198,19 +201,19 @@ for i in final:
 
 
 
-# ---------------------------------------------------------------- Exercise 10 : Sandwich Orders
+# Exercise 10 : 
 print('\n')
-print('# ------------------------------------------------------------Exercise 10 : Sandwich Orders')
+print('Exercise 10 : ')
 sandwich_orders = ["Tuna sandwich", "Avocado sandwich", "Egg sandwich", "Sabih sandwich", "Pastrami sandwich"]
 finished_sandwiches=[]
 print("we are starting to prepare your sandwich")
 for i in sandwich_orders :
 	finished_sandwiches.append(i)
 	print(f'I made your {i}')
-# ---------------------------------------------------------------- Exercise 11 : Sandwich Orders#2
+# Exercise 11 : 
 print('\n')
 finished_sandwiches=[]
-print('# ------------------------------------------------------------Exercise 11 : Sandwich Orders#2')
+print('Exercise 11 : ')
 sandwich_orders = ["Tuna sandwich","Pastrami sandwich","Avocado sandwich","Pastrami sandwich","Egg sandwich","Pastrami sandwich","Sabih sandwich","Pastrami sandwich"]
 print('we are running out of  pastrami')
 for i in sandwich_orders :
