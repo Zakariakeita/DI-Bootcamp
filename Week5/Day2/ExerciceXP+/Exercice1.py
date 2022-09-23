@@ -22,17 +22,8 @@ class Family():
 						print(f'{name} is under 18')
 						return False
 	def family_presentation(self):
-		print(f'------------------Family {self.last_name}----------------------------')
+		print(f'\t Family {self.last_name}')
 		for i in self.members: 
 			print( i['name'])
 		
 
-'''cooper=Family('Cooper')
-cooper.born(name='sheldon',age=0,gender='Male',is_child=True)
-cooper.born(name='Penny',age=0,gender='Male',is_child=True)
-cooper.is_18('Penny')
-cooper.is_18('Sarah')
-cooper.is_18('sheldon')
-cooper.is_18('Michael')
-cooper.family_presentation()
-'''

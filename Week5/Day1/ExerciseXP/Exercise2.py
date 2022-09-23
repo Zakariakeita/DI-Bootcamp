@@ -1,4 +1,4 @@
-class Dog():
+class Dog:
 	def __init__(self,name,height):
 		self.name=name
 		self.height=height
