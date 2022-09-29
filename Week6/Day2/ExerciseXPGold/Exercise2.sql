@@ -46,5 +46,7 @@ Tip: You should display the first_name, last_name and the number of grades of ea
 Tip : Use an alias called total_grade to fetch the grades.
 Hint : Use GROUP BY. */
 SELECT first_name,last_name ,COUNT(math_grade) as total_grade FROM students GROUP BY first_name,last_name ;
+--Find the sum of all the students grades.
+SELECT SUM(math_grade) as SumNote FROM students;
 
 
