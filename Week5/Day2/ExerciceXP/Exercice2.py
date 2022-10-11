@@ -25,18 +25,7 @@ class Dog():
 harry=Dog('harry',12,13)
 ron=Dog('ron',22,20)
 hermione=Dog('hermione',14,25)
-'''
-print(harry.bark())
-print(harry.name,' speed = ',harry.speed_run())
-print(hermione.bark())
-print(hermione.name,' speed = ',hermione.speed_run())
-print(ron.bark())
-print(ron.name,' speed = ',ron.speed_run())
-harry.fight(ron)
-harry.fight(hermione)
-harry.fight(harry)
-ron.fight(hermione)
-'''
+
 
 
 

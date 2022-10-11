@@ -34,7 +34,7 @@ SELECT film_id,title,description,film.length,rental_rate FROM film WHERE title I
 --Write a query which will find the 10 cheapest movies.
 SELECT  film_id,title,description,film.length,rental_rate FROM film ORDER BY rental_rate ASC LIMIT 10;
 --Not satisfied with the results. Write a query which will find the next 10 cheapest movies.
-SELECT  film_id,title,description,film.length,rental_rate FROM film ORDER BY rental_rate ASC LIMIT 10 OFFSET 10;
+SELECT  film_id,title,description,film.length,rental_rate FROM film  ORDER BY rental_rate ASC  OFFSET 10 FETCH FIRST 10 ROWS ONLY;
 --Write a query which will join the data in the customer table and the payment table. You want to get the amount and the date of every payment made by a customer, ordered by their id (from 1 to…).
 SELECT pa.amount, pa.payment_date FROM payment pa INNER JOIN customer cu ON pa.customer_id=cu.customer_id ORDER BY cu.customer_id ASC;
 --You need to check your inventory. Write a query to get all the movies which are not in inventory.

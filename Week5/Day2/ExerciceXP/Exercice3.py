@@ -26,7 +26,6 @@ hermione=PetDog('hermione',14,25)
 
 harry.train()
 ron.train()
-#hermione.train()
 harry.fight(hermione)
 harry.play(harry.name,ron.name,hermione.name)
 harry.do_a_trick()

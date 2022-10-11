@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Animal ID={{id}} </h1>
+    <ul>
+
+        <li style="list-style-type: none;"><img src="{% static 'info/images/' %}{{image}}" alt="cool" height="100" width="100">  <br><br>
+            ID : {{id}} <br><br>  NAME : {{name}} <br><br> LEGS : {{legs}} <br><br> WEIGHT : {{weight}} <br><br>  HEIGHT : {{height}} <br> <br> SPEED : {{speed}} <br>   <br> FAMILY ID : {{family}} </li>
+    
+    </ul>
+</body>
+</html>

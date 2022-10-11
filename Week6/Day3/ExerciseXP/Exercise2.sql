@@ -23,11 +23,11 @@ UPDATE film SET language_id=(SELECT language_id FROM language WHERE name='French
 --We created a new table called customer_review. Drop this table. Is this an easy step, or does it need extra checking?
 DROP TABLE customer_review; --It is an easy step
 --Find out how many rentals are still outstanding (ie. have not been returned to the store yet).
-SELECT COUNT(r.rental_id) FROM rental r WHERE r.return_date>CURRENT_DATE
+SELECT COUNT(r.rental_id) FROM rental r WHERE r.return_date IS NULL;
 
 --Find the 30 most expensive movies which are outstanding (ie. have not been returned to the store yet)
 SELECT f.title ,f.rental_rate FROM rental r INNER JOIN inventory i ON i.inventory_id=r.inventory_id INNER JOIN film f ON f.film_id=i.film_id
-WHERE r.return_date>CURRENT_DATE AND f.rental_rate IN(SELECT MAX(rental_rate) FROM film)  LIMIT 30;
+WHERE r.return_date IS NULL AND f.rental_rate IN(SELECT MAX(rental_rate) FROM film)  LIMIT 30;
 
 --Your friend is at the store, and decides to rent a movie. He knows he wants to see 4 movies, but he can’t remember their names. Can you help him find which movies he wants to rent?
 --The 1st film : The film is about a sumo wrestler, and one of the actors is Penelope Monroe.
@@ -44,4 +44,4 @@ BETWEEN '2005-07-28' AND '2005-08-01' AND r.customer_id=(SELECT customer_id FROM
 
 --The 4th film : His friend Matthew Mahan watched this film, as well. It had the word “boat” in the title or description, and it looked like it was a very expensive DVD to replace.
 SELECT f.title FROM film f INNER JOIN inventory i ON f.film_id=i.film_id INNER JOIN rental r ON r.inventory_id=i.inventory_id WHERE ((f.title ILIKE'%boat%') OR (f.description ILIKE'%boat%')) 
- AND r.return_date<CURRENT_DATE AND f.replacement_cost> (SELECT AVG(replacement_cost) FROM film) AND r.customer_id=(SELECT customer_id FROM customer WHERE first_name='Matthew' AND last_name='Mahan');
+ AND r.return_date IS NOT NULL AND f.replacement_cost> (SELECT AVG(replacement_cost) FROM film) AND r.customer_id=(SELECT customer_id FROM customer WHERE first_name='Matthew' AND last_name='Mahan');

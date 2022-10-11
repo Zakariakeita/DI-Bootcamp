@@ -1,0 +1,18 @@
+body{
+    margin-top: 10px;
+}
+h1{
+    
+    text-decoration: underline;
+
+}
+h3{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}

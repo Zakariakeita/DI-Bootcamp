@@ -25,15 +25,12 @@ class TheIncredibles(Family):
 			raise Exception(f'{name} you are not over 18 years old so you are not allowed to use your power')
 	def incredible_presentation(self):
 		self.family_presentation()
-		print('------------------------------- Powers Description : ----------------------------')
 		for i in self.members:
-			print(f'***** {i["name"]} allias {i["incredible_name"]} Power can {i["power"]} *****')
+			print(f'\t {i["name"]} allias {i["incredible_name"]} Power can {i["power"]} ')
 
 		print('\n')
 cooper=TheIncredibles('Coopers')
 cooper.incredible_presentation()
 cooper.born(name='Baby Jack ',age=0,gender='Male',is_child=True,power='Unknow Power',incredible_name='Unknow')
 cooper.incredible_presentation()
-'''cooper.use_power('Sarah')
-cooper.use_power('Michael')
-'''
+
