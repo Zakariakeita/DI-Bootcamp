@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in data%}
+    <h1>List of animals in Family :{{i.family_id}}</h1>
+    <ul>
+        
+        <li>ID : {{i.id}} <br><br>  NAME : {{i.name}} <br><br> LEGS : {{i.legs}} <br><br> WEIGHT : {{i.weight}} <br><br>  HEIGHT : {{i.height}} <br> <br> SPEED : {{i.speed}} <br>   <br> FAMILY ID : {{i.family_id}} <br>   <br><br>   <br></li>
+
+        
+    </ul>{% endfor %}
+</body>
+</html>

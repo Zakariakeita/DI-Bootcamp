@@ -1,0 +1,9 @@
+Name : Sanou
+Age : 25
+----	Stats  ----
+Strength : 15
+Dexterity : 11
+Constitution : 11
+Intelligence : 12
+Wisdom : 8
+Charisma : 13

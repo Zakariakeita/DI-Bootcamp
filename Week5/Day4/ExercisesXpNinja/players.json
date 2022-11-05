@@ -1,0 +1,24 @@
+{
+   "players": [
+      {
+         "Name": "gafar",
+         "Age": "25",
+         "Strength": 15,
+         "Dexterity": 11,
+         "Constitution": 11,
+         "Intelligence": 12,
+         "Wisdom": 8,
+         "Charisma": 13
+      },
+      {
+         "Name": "hector",
+         "Age": "21",
+         "Strength": 13,
+         "Dexterity": 11,
+         "Constitution": 12,
+         "Intelligence": 8,
+         "Wisdom": 7,
+         "Charisma": 10
+      }
+   ]
+}

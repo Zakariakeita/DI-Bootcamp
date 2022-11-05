@@ -1,0 +1,28 @@
+
+{% extends 'info/templates/base.html' %}
+{% block content %}
+{{ block.super }}
+{% load static %}
+<div class="">
+    <div class="d-flex justify-content-center">
+    <h3>Animal ID= {{data.id}} </h3>
+    </div>
+    <li>
+        <div class="d-flex justify-content-center">
+           
+        </div>
+        
+        <div class="row " >
+
+            <div class="col-md-2" style="margin-left: 35%;">
+                 NAME : {{data.name}} <br><br> LEGS : {{data.legs}} <br><br> WEIGHT : {{data.weight}} <br><br>
+            </div>
+            <div class="col-md-2">
+                 HEIGHT : {{data.height}} <br> <br> SPEED : {{data.speed}} <br>   <br> FAMILY ID : {{data.family_id}} 
+
+            </div>
+        
+    </div>
+    </li>
+</div>
+{% endblock content %}

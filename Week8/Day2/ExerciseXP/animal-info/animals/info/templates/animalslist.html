@@ -1,0 +1,12 @@
+
+    {% extends 'info/templates/base.html' %}
+    {% block content %}
+    {{ block.super }}
+    <h3>List of Animals :</h3>
+    {% for i in data%}
+    
+        <a href="{% url 'animals' i.id %}" ><li> Name : {{i.name}}     <br><br></li></a>
+    
+    {% endfor %}
+
+    {% endblock content %}

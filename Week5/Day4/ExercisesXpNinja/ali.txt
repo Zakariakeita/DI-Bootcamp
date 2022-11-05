@@ -1,0 +1,9 @@
+Name : Ali
+Age : 21
+----	Stats  ----
+Strength : 13
+Dexterity : 11
+Constitution : 12
+Intelligence : 8
+Wisdom : 7
+Charisma : 10
