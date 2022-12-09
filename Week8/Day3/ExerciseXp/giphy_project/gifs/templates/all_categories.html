@@ -1,0 +1,6 @@
+{% extends "base.html" %} 
+{% block content %}
+    {% for category in categories %}
+    <a href="{% url 'gifs.category' category.id %}">{{ category.name }}</a>
+    {% endfor %}
+{% endblock content %}

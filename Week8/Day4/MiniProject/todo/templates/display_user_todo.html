@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div style="padding:20px">
+        {% for todo in todos %}
+        <div class="card " style = "margin: 40px;">
+            <div class="card-header">
+              <div style="display:flex;justify-content: space-between;">
+                <strong>Category : {{ todo.category.name }}</strong>
+                <a href="{% url 'delete_todo' todo.id %}" type="button" class="btn-close " aria-label="Close"></a>
+              </div> 
+            </div>
+            <p style="color:blue;">{{ todo.deadline }}</p>
+            <div class="card-body">
+              <div style="display:flex;justify-content: space-between;">
+                  <h5 class="card-title"> Title : {{ todo.title }}</h5>
+                  <p class="card-text">Created at: {{ todo.date_creation|date:"d M Y P" }}</p>
+              </div>
+              <p class="card-text">{{ todo.details }}</p>
+              {% if todo.has_been_done == False %}
+                    <p><a href="{% url 'todo_done' todo.id %}" class="btn btn-primary">Done</a>  End: <span style = "color: red;">{{ todo.deadline_date|date:"d M Y P" }}<span></p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    </div>
+    <div class="col">
+      <div class="card text-start text-info">
+        <div class="card-header">
+          <h5>Uncompleted Tasks</h5> 
+        </div>
+        <div class="card-body">
+          {% for uncomplete in uncompleted %}
+            <ul style = "list-style-type:none;">
+              <li class="card-text" >{{ uncomplete.title }}</li>
+            </ul>
+          {% endfor %}
+        </div>
+        <div class="card-footer text-muted">
+          {{ t_uncomplete }} uncompleted tasks
+        </div>
+      </div>
+
+      <div class="card text-end text-success">
+        <div class="card-header">
+          <h5>Done Tasks</h5>
+        </div>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          {% for do in done %}
+          <ul style = "list-style-type:none;">
+              <li class="card-text">{{ do.title }}</li>
+            </ul>
+          {% endfor %}
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-muted">
+          {{ t_done }} completed tasks
+        </div>
+      </div>
+
+      <div style="margin-top: 25px;" class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="{% url 'clear_all' %}" type="button" class="btn btn-outline-danger">Clear all</a>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+{% endblock %}

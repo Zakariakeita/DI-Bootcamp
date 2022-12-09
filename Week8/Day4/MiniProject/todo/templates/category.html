@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding:20px">
+    <div class="card text-start w-50 ">
+        <div class="card-header">
+            <img src="{{ category.image.url }}" alt=""> All the tasks
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Category : {{ category.name }}</h5>
+            {% for todo in todos %}
+            <a href="#"><p class="card-text">{{ todo.title }}.</p></a>
+            {% endfor %}
+            
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-muted">
+            {{ ntask }} task(s) in this category
+        </div>
+    </div>
+</div>
+{% endblock %}

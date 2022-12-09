@@ -1,0 +1,25 @@
+
+{% extends "base.html" %} 
+{% block content %}
+    <div>
+        <img alt="image_profile_{{user.first_name}}_{{user.last_name}}" src={{gif.url}} width=500>
+    </div>
+    <h1>Detail : </h1>
+    <div sytle = "border : 2px solid black">
+        <p>title : <a href="">{{ gif.title }}</a></p> 
+        <p>url : <a href="">{{ gif.url }}</a></p> 
+        <p>uploader name : <a href="">{{ gif.uploader_name }}</a></p> 
+    </div>
+    <h3>&#10084;&#65039; {{ gif.likes }}</h3>
+    <div style = "margin: 25px;">
+        <form action="{% url 'gifs.like' gif.id  %}" method="post" name="like" id="likeform">
+            {% csrf_token %}
+            <button type='submit' name='like' value="{{ gif.id }}" class="btn btn-outline-success">like</button>
+        </form>
+
+        <form action="{% url 'gifs.dislike' gif.id  %}" method="post" name="dislike" id="dislikeform">
+            {% csrf_token %}
+            <button type='submit' name='dislike' value="{{ gif.id }}" class="btn btn-outline-danger">Dislike</button>
+        </form>
+    </div>
+{% endblock content %}

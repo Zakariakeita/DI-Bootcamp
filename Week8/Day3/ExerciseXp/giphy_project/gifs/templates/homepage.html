@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block content %}
+    {% for gif in gifs%}
+        <a href="{% url 'gifs.gif' gif.id %}">
+            <img alt="image_profile_{{user.first_name}}_{{user.last_name}}" src={{gif.url}} width=100>
+        </a>
+    {% endfor %}
+{% endblock content %}
+
+</body>
+</html>

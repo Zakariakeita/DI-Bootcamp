@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="padding:20px">
+    <form method = "POST">
+        {% csrf_token %}
+        <h2>Sign Up</h2>
+        <table>
+            {{form.as_table}}
+        </table>
+        <button class = "btn btn-info" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+
