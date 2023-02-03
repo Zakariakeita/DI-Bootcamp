@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block script %}
+<script src="{% static 'script.js' %}"></script>
+{% endblock script %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">categories</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            {% for categories in categories %}
+
+<a class="nav-link active" aria-current="page" href="{% url 'categories_gifs' categories.id %}">{{categories.name}}</a>
+{% endfor %}
+
+
+        </div>
+      </div>
+    </div>
+  </nav><br>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+{% for gif in gifs %}
+<div class="col">
+  <div class="card">
+    <div class="col-lg-4 col-sm-6">
+      <div class="thumbnail">
+    <img src="{{gif.URL}}"  class="card-img-top" alt="Gif actions">
+      </div></div>
+    <div class="card-body">
+      <h5 class="card-title">{{gif.title}}</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <a href="{% url 'gif_detail' gif.id %}" class="btn btn-primary">Gif detail</a><br><br>
+      <button type="button" class="btn btn-success position-relative" id="like" onclick="myFunction()">
+        Like
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+          1+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+
+      </button> 
+              <button type="button" class="btn btn-danger position-relative" id="Dislike">
+        Dislike
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          1+
+        </span>
+      </button>  
+      
+
+    </div>
+  </div>
+</div>
+{%endfor%}
+</div>
+{% endblock content %}

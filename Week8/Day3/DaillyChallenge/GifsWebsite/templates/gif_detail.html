@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link%} 
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+{% endblock%}
+{% block categories_gifs %}
+<a href="{% url 'home' %}"><button class="btn btn-primary">Back to home</button></a><br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for gif in gifs %}
+    <div class="col">
+      <div class="card">
+        <div class="col-lg-4 col-sm-6">
+          <div class="thumbnail">
+        <img src="{{gif.URL}}"  class="card-img-top" alt="Gif actions">
+          </div></div>
+        <div class="card-body">
+            <small class="text-muted">Titre</small>
+          <h5 class="card-title"> {{gif.title}}</h5>
+          <small class="text-muted">Uploader name</small>
+          <p class="card-text">{{gif.uploader_name}}</p>
+          <small class="text-muted">Date gif created</small>
+          <h5 class="card-title">{{gif.created_at}}</h5>
+          {% comment %} <small class="text-muted">Gif categorie</small> {% endcomment %}
+          {% comment %} <h5 class="card-title">{{gif.categorie}}</h5> {% endcomment %}
+
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+    </div>
+    {% endblock  %}
+    

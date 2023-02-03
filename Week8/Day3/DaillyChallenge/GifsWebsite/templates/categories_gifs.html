@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link%} 
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+{% endblock%}
+{% block categories_gifs %}
+<a href="{% url 'home' %}"><button class="btn btn-primary">Back to home</button></a><br><br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for gif in gifs %}
+    <div class="col">
+      <div class="card">
+        <div class="col-lg-4 col-sm-6">
+          <div class="thumbnail">
+        <img src="{{gif.URL}}"  class="card-img-top" alt="Gif actions">
+          </div></div>
+        <div class="card-body">
+          <h5 class="card-title">{{gif.title}}</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <a href="{% url 'gif_detail' gif.id %}" class="btn btn-primary">Gif detail</a>
+
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+    </div>
+    {% endblock  %}
+    

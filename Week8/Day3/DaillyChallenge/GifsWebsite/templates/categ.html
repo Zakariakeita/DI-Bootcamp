@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%block title%}
+{{page_title}}
+{% endblock title%}
+
+{%block content%}
+
+{% for gif in gifs %}
+<h1>{{gif.title}}</h1>
+
+<p>{{gif.URL}}</p>
+<br>
+{% endfor %}
+{% endblock content%}
