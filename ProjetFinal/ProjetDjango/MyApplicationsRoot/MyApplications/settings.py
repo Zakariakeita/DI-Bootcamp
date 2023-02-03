@@ -138,8 +138,8 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
 EMAIL_PORT=587
-EMAIL_HOST_USER="ecogesecoges25@gmail.com"
-EMAIL_HOST_PASSWORD="kbbaqarnugqvhnvd"
+EMAIL_HOST_USER="youremail"
+EMAIL_HOST_PASSWORD="yourpassword"
 
 
 # Modification de la session à 3 minute inactive
