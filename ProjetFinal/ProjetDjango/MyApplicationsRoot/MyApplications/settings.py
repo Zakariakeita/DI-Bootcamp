@@ -132,15 +132,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL='ecoges.User'
 
 # Envoie de message par Email
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+'''
+EMAIL_BACKEND=''
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST=''
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
-EMAIL_PORT=587
+EMAIL_PORT=
 EMAIL_HOST_USER="youremail"
 EMAIL_HOST_PASSWORD="yourpassword"
-
+'''
 
 # Modification de la session à 3 minute inactive
 AUTO_LOGOUT={
