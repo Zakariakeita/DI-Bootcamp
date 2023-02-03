@@ -1,0 +1,492 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      <link rel="stylesheet" href="{% static 'css/bootstrap-4.5.2-dist/css/bootstrap.css' %}" type="text/css">
+      <link rel="stylesheet" href="{% static 'css/bootstrap-4.5.2-dist/js/bootstrap.min.js' %}">
+      <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+     
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Eco-Ges</title>
+    </head>
+    <body>
+    
+        <!--Section du sidebar-->
+        <section class="sideNavBar" id="sideNavBar">
+          <div>
+            <ul class="sidebar-list">
+             
+              <a href="#" class=""><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"   stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fill="#fff" d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg></a>
+              <div class="caseLogo" id="caseLogo"> <img src="{% static 'images/logo.jpeg' %}" width="152px" height="50px" alt=""> </div>
+  
+                  
+                  <hr>
+                  {% if user.role == "Secretaire"%}
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'dashboardS' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'inscription' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>               
+                       <span>Inscriptions</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                      <a href="{% url 'eleve' %}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                     <span>Elèves</span>
+                      </a>
+                    </li>
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'classe' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                      <span>Classes</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="{% url 'matiere' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>               
+                       <span>Matières</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                      <a href="{% url 'enseignant' %}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>           
+                          <span>Enseignants</span>
+                      </a>
+                    </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path fill="#fff" d="m9.675 13.7.875-2.85L8.25 9h2.85l.9-2.8.9 2.8h2.85l-2.325 1.85.875 2.85-2.3-1.775ZM6 23v-7.725q-.95-1.05-1.475-2.4Q4 11.525 4 10q0-3.35 2.325-5.675Q8.65 2 12 2q3.35 0 5.675 2.325Q20 6.65 20 10q0 1.525-.525 2.875T18 15.275V23l-6-2Zm6-7q2.5 0 4.25-1.75T18 10q0-2.5-1.75-4.25T12 4Q9.5 4 7.75 5.75T6 10q0 2.5 1.75 4.25T12 16Z"/></svg>                    
+                      <span>Résultats</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.65 14.275v-2.65h10.7v2.65Zm0 4.05V15.7h7.65v2.625Zm-1.7 4.525q-1.175 0-2-.837-.825-.838-.825-1.988V5.9q0-1.175.825-2t2-.825h.25V1.15h2.675v1.925h8.25V1.15H18.8v1.925h.25q1.175 0 2 .825t.825 2v14.125q0 1.15-.825 1.988-.825.837-2 .837Zm0-2.825h14.1V9.575H4.95v10.45Z"/></svg>                
+                      <span>Certificats</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>                  
+                        <span>Messages</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>                  <span>Configuration</span>
+                    </a>
+                  </li>
+                  {%elif user.role == 'Directeur'%}
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'dashboardD' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item active">
+                    <a href="{% url 'profilD' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 21-.3-1.5q-.3-.125-.563-.262-.262-.138-.537-.338l-1.45.45-1-1.7 1.15-1q-.05-.35-.05-.65 0-.3.05-.65l-1.15-1 1-1.7 1.45.45q.275-.2.537-.338.263-.137.563-.262L16 11h2l.3 1.5q.3.125.563.275.262.15.537.375l1.45-.5 1 1.75-1.15 1q.05.3.05.625t-.05.625l1.15 1-1 1.7-1.45-.45q-.275.2-.537.338-.263.137-.563.262L18 21ZM2 20v-2.8q0-.825.425-1.55.425-.725 1.175-1.1 1.275-.65 2.875-1.1Q8.075 13 10 13h.35q.15 0 .3.05-.725 1.8-.6 3.575.125 1.775 1.2 3.375Zm15-2q.825 0 1.413-.587Q19 16.825 19 16q0-.825-.587-1.413Q17.825 14 17 14q-.825 0-1.412.587Q15 15.175 15 16q0 .825.588 1.413Q16.175 18 17 18Zm-7-6q-1.65 0-2.825-1.175Q6 9.65 6 8q0-1.65 1.175-2.825Q8.35 4 10 4q1.65 0 2.825 1.175Q14 6.35 14 8q0 1.65-1.175 2.825Q11.65 12 10 12Z"/></svg>         
+                              <span>Profils</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                      <a href="{% url 'eleve' %}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                     <span>Elèves</span>
+                      </a>
+                    </li>
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'classe' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+                      <span>Classes</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="{% url 'matiere' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>               
+                       <span>Matières</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                      <a href="{% url 'enseignant' %}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>           
+                          <span>Enseignants</span>
+                      </a>
+                    </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path fill="#fff" d="m9.675 13.7.875-2.85L8.25 9h2.85l.9-2.8.9 2.8h2.85l-2.325 1.85.875 2.85-2.3-1.775ZM6 23v-7.725q-.95-1.05-1.475-2.4Q4 11.525 4 10q0-3.35 2.325-5.675Q8.65 2 12 2q3.35 0 5.675 2.325Q20 6.65 20 10q0 1.525-.525 2.875T18 15.275V23l-6-2Zm6-7q2.5 0 4.25-1.75T18 10q0-2.5-1.75-4.25T12 4Q9.5 4 7.75 5.75T6 10q0 2.5 1.75 4.25T12 16Z"/></svg>                    
+                      <span>Résultats</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'depense' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 22q-.825 0-1.412-.587Q5 20.825 5 20q0-.825.588-1.413Q6.175 18 7 18t1.412.587Q9 19.175 9 20q0 .825-.588 1.413Q7.825 22 7 22Zm10 0q-.825 0-1.412-.587Q15 20.825 15 20q0-.825.588-1.413Q16.175 18 17 18t1.413.587Q19 19.175 19 20q0 .825-.587 1.413Q17.825 22 17 22ZM5.2 4h14.75q.575 0 .875.512.3.513.025 1.038l-3.55 6.4q-.275.5-.738.775Q16.1 13 15.55 13H8.1L7 15h12v2H7q-1.125 0-1.7-.988-.575-.987-.05-1.962L6.6 11.6 3 4H1V2h3.25Z"/></svg>                
+                      <span>Dépenses</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.65 14.275v-2.65h10.7v2.65Zm0 4.05V15.7h7.65v2.625Zm-1.7 4.525q-1.175 0-2-.837-.825-.838-.825-1.988V5.9q0-1.175.825-2t2-.825h.25V1.15h2.675v1.925h8.25V1.15H18.8v1.925h.25q1.175 0 2 .825t.825 2v14.125q0 1.15-.825 1.988-.825.837-2 .837Zm0-2.825h14.1V9.575H4.95v10.45Z"/></svg>                
+                      <span>Certificats</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>                  
+                        <span>Messages</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="{% url 'configurationD' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>                
+                          <span>Configuration</span>
+                    </a>
+                  </li>
+                  {%elif user.role == 'Professeur'%}
+                  <li class="sidebar-list-item ">
+                    <a href="{% url 'dashboardP' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                      <span>Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="{% url 'trimestre1' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17h2V7h-4v2h2Zm-7 4q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Z"/></svg>
+                       <span> 1<sup>er</sup> Trimestre</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                      <a href="{% url 'trimestre2' %}">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17h6v-2h-4v-2h2q.825 0 1.413-.588Q15 11.825 15 11V9q0-.825-.587-1.413Q13.825 7 13 7H9v2h4v2h-2q-.825 0-1.412.587Q9 12.175 9 13Zm-4 4q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Z"/></svg>
+                          <span> 2<sup>ème</sup> Trimestre</span>
+                      </a>
+                    </li>
+                  <li class="sidebar-list-item">
+                    <a href="{% url 'trimestre3' %}">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17h4q.825 0 1.413-.587Q15 15.825 15 15v-1.5q0-.65-.425-1.075Q14.15 12 13.5 12q.65 0 1.075-.425Q15 11.15 15 10.5V9q0-.825-.587-1.413Q13.825 7 13 7H9v2h4v2h-2v2h2v2H9Zm-4 4q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Z"/></svg>          
+                            <span>3<sup>ème</sup> Trimestre</span>
+                    </a>
+                  </li>
+                 
+                  <li class="sidebar-list-item ">
+                      <a href="#">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>                  
+                          <span>Messages</span>
+                      </a>
+                  </li>
+                  <li class="sidebar-list-item ">
+                      <a href="#">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>          
+                                  <span>Configuration</span>
+                      </a>
+                  </li>
+                  {%endif%}
+              </ul><br><br>
+            <div style="float: right;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60.331 60.331">
+                  <path id="Icon_awesome-question-circle" data-name="Icon awesome-question-circle" d="M60.894,30.728A30.166,30.166,0,1,1,30.728.563,30.164,30.164,0,0,1,60.894,30.728ZM31.538,10.537c-6.629,0-10.857,2.792-14.176,7.755a1.462,1.462,0,0,0,.33,1.978l4.221,3.2a1.459,1.459,0,0,0,2.027-.258c2.173-2.756,3.663-4.354,6.97-4.354,2.485,0,5.558,1.6,5.558,4.009,0,1.822-1.5,2.757-3.957,4.133-2.861,1.6-6.648,3.6-6.648,8.595v.487a1.46,1.46,0,0,0,1.46,1.46h6.812a1.46,1.46,0,0,0,1.46-1.46v-.162c0-3.462,10.118-3.606,10.118-12.974C45.712,15.888,38.394,10.537,31.538,10.537ZM30.728,40.7a5.6,5.6,0,1,0,5.6,5.6A5.6,5.6,0,0,0,30.728,40.7Z" transform="translate(-0.563 -0.563)" fill="#fff"/>
+              </svg>
+            </div>
+             
+          </div>
+      </section>
+    <!--Section du top menu-->
+    <section id="topMenu-pd" class="navbar navbar-expand-lg navbar-light shadow p-2 mb-5 bg-white sticky-top topNavBar">
+        <!--a class="navbar-brand" href="#">Navbar</a-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="top-navbar-research-input" style="margin-right: -2px;">
+                
+                <form action="" class="top-navbar-research-input top-navbar-form  border border-blue rounded ">
+                    <button class="top-navbar-research-button curseur">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 21.017 22.386">
+                            <path id="Icon_awesome-search" data-name="Icon awesome-search" d="M20.731,19.354,16.638,15a.955.955,0,0,0-.7-.306h-.669a9.43,9.43,0,0,0,1.806-5.6A8.828,8.828,0,0,0,8.539,0,8.828,8.828,0,0,0,0,9.093a8.828,8.828,0,0,0,8.539,9.093,8.173,8.173,0,0,0,5.255-1.924v.713a1.084,1.084,0,0,0,.287.743l4.093,4.359a.94.94,0,0,0,1.392,0l1.162-1.237a1.1,1.1,0,0,0,0-1.486ZM8.539,14.689a5.43,5.43,0,0,1-5.255-5.6A5.43,5.43,0,0,1,8.539,3.5a5.43,5.43,0,0,1,5.255,5.6A5.43,5.43,0,0,1,8.539,14.689Z" fill="#20819f"/>
+                        </svg>
+                    </button>
+                    <input type="text" name="" id="" placeholder="Rechercher" class="top-navbar-input ">
+                </form>
+                
+            </div>
+            <div style="margin-right: 30%; margin-top: 3px;"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M12 14q-1.25 0-2.125-.875T9 11V5q0-1.25.875-2.125T12 2q1.25 0 2.125.875T15 5v6q0 1.25-.875 2.125T12 14Zm-1 7v-3.075q-2.6-.35-4.3-2.325Q5 13.625 5 11h2q0 2.075 1.463 3.537Q9.925 16 12 16t3.538-1.463Q17 13.075 17 11h2q0 2.625-1.7 4.6-1.7 1.975-4.3 2.325V21Z"/></svg></div>
+        </div>
+            <span class=" micro1 curseur"><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M4 19v-2h2v-7q0-2.075 1.25-3.688Q8.5 4.7 10.5 4.2v-.7q0-.625.438-1.062Q11.375 2 12 2t1.062.438q.438.437.438 1.062v.7q2 .5 3.25 2.112Q18 7.925 18 10v7h2v2Zm8 3q-.825 0-1.412-.587Q10 20.825 10 20h4q0 .825-.587 1.413Q12.825 22 12 22Z"/></svg>
+                </span> 
+            <!--form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form-->
+            <div class="w3-display-container w3-hover-opacity w3-margin-right w3-dropdown-hover">
+              <img src="/media/{{user.profil}}" width="41px" height="41px" alt="" class="rounded-circle " style="margin-right: 3%;">
+            </div>
+            <div class="w3-margin-right"><strong>{{user.last_name}}</strong></div>
+              
+            <a href="{% url 'logout' %}"> <button class="w3-button w3-round-xxlarge w3-blue w3-hover-green w3-serif curseur">Déconnexion</button></a>
+        
+        
+    </section>
+    <!--section du menu principale, le contenu  style="width: 550px;height:400px; margin: 0 auto; "-->
+    
+    <section id="body-pd" class="shadow p-2 mb-5 bg-white rounded contenu" style="background-color: white;" >
+        
+        <div class="shadow p-2 mt-2 mb-5 bg-white rounded" style="background-color: white;">
+          <div class="w3-center " style="margin-top: -5px;"><span class="textModal">Année scolaire : {{activeAnneeScolaire.intituleAnneeScolaire}}</span></div>
+          <!-- Button to Open the Modal -->
+          <div class="w3-row">
+          <div class="w3-left">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticCreer" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 21 21">
+                <path id="Icon_material-add" data-name="Icon material-add" d="M28.5,19.5h-9v9h-3v-9h-9v-3h9v-9h3v9h9Z" transform="translate(-7.5 -7.5)" fill="#fff"/>
+              </svg> Créer profil
+            </button>
+            <div class="modal fade" id="staticCreer" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header w3-center">
+                    <div class="w3-container ">
+                      <h4 class="modal-title textModal" id="staticBackdropLabel">Création d'un nouveau profil</h4></div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                    <form   method="POST" class="" action="saveProfilD" enctype="multipart/form-data">
+                      {%csrf_token%}
+                      <div class="form-group ">
+                        <div class="custom-file ">
+                          <input type="file" class="custom-file-input formulaire" accept="image/png, image/jpeg, image/jpg" id="customFile" name="profil">
+                          <label class="custom-file-label" for="customFile">Choisissez la photo de profil </label>
+                        </div>                           
+                         <input type="text" name="nom"  class="form-control formulaire " id="recipient-name" placeholder="Nom"  required style="margin-top: 8px;">
+                        <input type="text" name="prenom"  class="form-control formulaire " id="recipient-name" placeholder="Prenom"  required style="margin-top: 8px;">
+                        <input type="email" name="email" class="form-control formulaire " id="recipient-name" placeholder="Email"  required style="margin-top: 8px;">
+
+                        <select name="role" id="" class="form-control formulaire " required style="margin-top: 8px;">
+                          <option value="">--Selectionez le Rôle--</option>
+                          {% for i in roles %}
+                          {%if i == 'Secretaire' or i == 'Caissier' %}
+                          <option value="{{i}}">{{i}}</option>
+                          {%endif%}
+                          {%endfor%}
+                         
+                        </select>
+                          <br>
+                        <div class="w3-center ">
+                        <button type="button" class="btn btn-danger " data-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-success ">Valider</button></div>
+                      </div>
+                      
+                  </form>
+                </div>
+              
+              </div>
+          </div>
+      
+            </div>
+          </div>
+
+      <div class="w3-right">
+      
+        <a href="">
+          <button type="button" class="btn btn-warning text-white"   >
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path fill="#fff" d="M13.5 7V4.5h-7V7H5V3h10v4Zm-10 1.5h13.021H5Zm11.25 2q.312 0 .531-.219.219-.219.219-.531 0-.312-.219-.531Q15.062 9 14.75 9q-.312 0-.531.219Q14 9.438 14 9.75q0 .312.219.531.219.219.531.219Zm-1.25 5v-3h-7v3ZM15 17H5v-3H2V9q0-.833.583-1.417Q3.167 7 4 7h12q.833 0 1.417.583Q18 8.167 18 9v5h-3Zm1.521-4.5V9.292q0-.334-.25-.563-.25-.229-.583-.229H4.292q-.334 0-.563.229-.229.229-.229.563V12.5H5V11h10v1.5Z"/></svg>            
+            Imprimer
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="w3-center "></div>
+    </div> 
+
+
+      <!--contenu principale-->
+      
+      
+        <div  style="margin-top: -30px;">
+          
+          <div class=" w3-center"><h5 class="textModal" >Liste des Utilisateurs</h5></div>
+          <table class="table table-striped table-hover monTable" id="myTable">
+            <thead>
+              <tr>
+                <th scope="col">Profil</th>
+                <th scope="col">Nom & Prénom(s)</th>
+                <th scope="col">Email</th>
+                <th scope="col">Rôle</th>
+                <th scope="col">Création</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="contenu_tbody">
+              {% for i in users %}
+                <tr >
+                  <th > <img style="margin-top: -12px; margin-bottom: -10px;" src="/media/{{i.profil}}" width="41px" height="41px" alt="" class="rounded-circle "></th>
+                <th scope="row">{{i.last_name}} {{i.first_name}}</th>
+                <td >{{i.email}} </td>
+                <td >{{i.role}}</td>
+                <td >{{i.date_joined}}</td>
+               
+               
+                <td >
+                  <!--MOdal de modifier-->
+                  <a href="#staticModifier-{{forloop.counter}}" style="margin-top: -8px; margin-bottom: -10px;" class="w3-button w3-blue w3-round-large w3-tiny w3-hover-black"  data-toggle="modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="iconButton" width="12.424" height="16.405" viewBox="0 0 17.424 20.405">
+                      <path id="Icon_metro-pencil" data-name="Icon metro-pencil" d="M17.272,1.928a2.983,2.983,0,0,1,2.723,3.188,3.543,3.543,0,0,1-.545,1.913L18.361,8.3,14.55,3.841l1.089-1.275a2.463,2.463,0,0,1,1.634-.638ZM3.66,16.594,2.571,22.333l4.9-1.275,10.073-11.8L13.733,4.8ZM14.747,9.173,7.124,18.1,6.185,17l7.623-8.927.939,1.1Z" transform="translate(-2.571 -1.928)" fill="#fff"/>
+                  </svg>                    
+                </a>
+                {% for j in users %}
+                <div class="modal fade" id="staticModifier-{{forloop.counter}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h4 class="modal-title textModal" id="staticModifier">Modification de l'Utilisateur</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            <form   method="POST" class="" action="updateProfilD/{{j.id}}" enctype="multipart/form-data">
+                              {% csrf_token %}
+                              <div class="form-group ">
+                                <div class="custom-file ">
+                                  <input type="file" class="custom-file-input formulaire" accept="image/png, image/jpeg, image/jpg" id="customFile" name="profil" >
+                                  <label class="custom-file-label" for="customFile">Choisissez la photo de profil </label>
+                                </div>                           
+                                 <input type="text" value="{{j.last_name}}" name="nom" class="form-control formulaire " id="recipient-name" placeholder="Nom"  required style="margin-top: 8px;">
+                                <input type="text" value="{{j.first_name}}" name="prenom" class="form-control formulaire " id="recipient-name" placeholder="Prenom"  required style="margin-top: 8px;">
+                                <input type="email" value="{{j.email}}" name="email" class="form-control formulaire " id="recipient-name" placeholder="Email"  required style="margin-top: 8px;">
+                                <br>
+                                <div class="w3-center ">
+                                <button type="button" class="btn btn-danger " data-dismiss="modal">Annuler</button>
+                                <button type="submit" class="btn btn-success ">Valider</button></div>
+                              </div>
+                              
+                          </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {%endfor%}
+                <!--MOdal de suppression-->
+                  <a href="#staticSupprimer-{{forloop.counter}}" style="margin-top: -8px; margin-bottom: -10px;" class="w3-button w3-red w3-round-large w3-tiny w3-hover-black"  data-toggle="modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="iconButton" width="12.038" height="15.186" viewBox="0 0 22.038 25.186">
+                    <path id="Icon_awesome-trash-alt" data-name="Icon awesome-trash-alt" d="M1.574,22.825a2.361,2.361,0,0,0,2.361,2.361H18.1a2.361,2.361,0,0,0,2.361-2.361V6.3H1.574Zm13.38-12.593a.787.787,0,1,1,1.574,0V21.251a.787.787,0,0,1-1.574,0Zm-4.722,0a.787.787,0,1,1,1.574,0V21.251a.787.787,0,0,1-1.574,0Zm-4.722,0a.787.787,0,1,1,1.574,0V21.251a.787.787,0,0,1-1.574,0ZM21.251,1.574h-5.9l-.462-.92A1.181,1.181,0,0,0,13.828,0H8.205A1.167,1.167,0,0,0,7.152.654l-.462.92H.787A.787.787,0,0,0,0,2.361V3.935a.787.787,0,0,0,.787.787H21.251a.787.787,0,0,0,.787-.787V2.361A.787.787,0,0,0,21.251,1.574Z" transform="translate(0 0)" fill="#fff"/>
+                    </svg>
+                  </a>
+                  {% for j in users%}
+                  <div class="modal fade" id="staticSupprimer-{{forloop.counter}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content  w3-center">
+                            <div class="modal-header">
+                                <h4 class="modal-title textModal" id="staticSupprimer" >Suppression de l'Utilisateur</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            
+                               <h6> Attention !!! l'Utilisateur <strong>{{j.last_name}} {{j.first_name}} <br> d'adresse email : {{j.email}}</strong> sera définitivement
+                                supprimer ainsi que ses états.
+                                <br><br>
+                                Voulez-vous vraiment le supprimer ? </h6>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                                
+                                <a href="deleteProfilD/{{j.id}}" type="button" class="btn btn-success">Valider</a>
+                               
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                {%endfor%}
+                
+                 
+                </td>
+                </tr >
+                {%endfor%}
+            </tbody>
+        </table>
+
+        </div>
+      
+     
+    
+  
+       
+      
+        
+        
+        
+
+         
+
+
+
+
+
+    </section>
+    <!--section du footer-->
+    <section id="topMenu-pd" class="navbar navbar-expand-lg navbar-light  fixed-bottom footerNavBar">
+      <div class="collapse navbar-collapse container-fluid clearfix  d-flex justify-content-between footsect" id="navbarSupportedContent">
+          
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block curseur">Copyright © 2022 <a href="#" target="" style="color: blue;">CEG de Siankoro</a>. All rights reserved.</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center footer" >School Management Software realized by 
+              <div class="w3-dropdown-click myinfos "><button onclick="myFunction()" style="font-weight: bold; margin-left: 2px;" class="btn btn-link">KEITA </button> 
+                <div id="Demo" class="w3-dropdown-content w3-card-4 w3-top " style=" width:18.6%; margin-right: 20%; margin-top: 20%;">
+                  <img src="{% static 'images/img1.jpg' %}" alt="KEITA" style="width:90%; margin-top: 5px;">
+                  <div class="w3-container">
+                    <p style="text-align:justify ; font-size: 12px;"><span style="font-weight: bold;">KEITA Zakaria Cheick Oumar</span>  est  
+                         Ingénieur de Travaux en Génie Logiciel
+                        et Developpeur FullStack.
+                    </p>
+                    
+                    <hr style="margin-top: -10px;">
+                    <P style="text-align:justify ;font-size: 12px;margin-top: -10px; font-weight: bold;">Contact:</P>
+                    <p style="text-align:justify ; font-size: 12px;margin-top: -10px;"> +226 64329081 / +226 61455550 
+                      Zakariacheickoumarkeita@gmail.com</p>
+                    
+                  </div>
+                </div>
+              </div>
+            
+      </div>
+  </section>
+ 
+  <script>
+    function myFunction() {
+      var x = document.getElementById("Demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
+     <script>
+      // Add the following code if you want the name of the file appear on select
+      $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+      });
+      </script>
+          {{redirect_to_login_immediately}}
+
+    </body>
+</html>

@@ -1,0 +1,289 @@
+:root {
+    --app-bg: #101827;
+    --sidebar: rgba(21, 30, 47,1);
+    --sidebar-main-color: #fff;
+    --table-border: #1a2131;
+    --table-header: #1a2131;
+    --app-content-main-color: #fff;
+    --sidebar-link: #fff;
+    --sidebar-active-link: #283650;
+    --sidebar-hover-link: #1a2539;
+    --action-color: #37659A;
+    --action-color-hover: #6291fd;
+    --app-content-secondary-color: #1d283c;
+    --filter-reset: #2c394f;
+    --filter-shadow: rgba(16, 24, 39, 0.8) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+body{
+    background-color: white;
+}
+.sideNavBar{
+    background-color: #37659A;
+    transition: .5s;
+    width: 14%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    transition: .5s;
+    padding:1.0em 1.3em 2em ;
+    overflow: hidden;
+   /* src: url('../police/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('truetype');*/
+}
+.topNavBar{
+    
+    margin-left: 14%;
+  
+}
+.contenu{
+    margin-top: -2.1%;
+    margin-left: 14.4%;
+    margin-right: 0.50%;
+    
+    height:  calc(100vh - 117px); 
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*min-height: calc(100vh - 138px);
+    padding: 60px;
+    overflow-x: auto;*/
+}
+.curseur{
+    cursor: pointer;
+}
+.footerNavBar{
+    font-size: 13px;
+    margin-left: 17%;
+    height: 4.30%;
+}
+.divfooter{
+    display: flex;
+}
+
+
+  
+/* ####################################################@ */
+  /* Css sur le contenu de menu superieur */
+  .top-navbar-research-input{
+    width: 350px;
+    height: 100%;
+    background: #E5F9FF;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+}
+/* style pour le petit formulaire de la barre de navigation du haut */
+.top-navbar-form{
+    height: 38px;
+    display: flex;
+    
+}
+/* style pour le bouton de la barre de navigation haute */
+.top-navbar-research-button{
+    background: #E5F9FF;
+    margin-left: 8px;
+    margin-top: 2px;
+    border: none;
+    vertical-align: center;
+    
+}
+/* style pour la zone de texte */
+.top-navbar-input{
+    height: 100%;
+    width: 300px;
+    background: #E5F9FF;
+    border: none;
+    padding: 5px;
+    font-size: 1em;
+}
+/* je ne veux pas que quand on commence a saisir
+ * que le cadre devient bleu
+ */
+ .top-navbar-input:focus{
+    outline: none;
+}
+
+.micro1 .micro{
+    margin-top: 10px;
+}
+
+.micro1 {
+    margin-right: 5%;
+}
+
+@media (max-width: 768px) {
+    
+  }
+
+  @media (max-width: 1000px) {
+    .footerNavBar{
+        font-size: 12px;
+        height: 7.50%;
+    }
+ }
+
+ @media (max-width: 1340px) {
+    .myinfos{
+       pointer-events: none;
+    }
+ }
+
+ /* Partie sidebar*/
+.nav_brand{
+    margin-left: -9%;
+    margin-top: -5%;
+}
+
+.menuIcon{
+    color: white;
+    cursor: pointer;
+    font-size: 38px;
+
+}
+
+ li {
+
+    list-style-type: none;
+ }
+ .mynav{
+     margin-top: 10px;
+    margin-left: -4%;
+    
+    
+ }
+ .sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: auto;
+  }
+  .sidebar-list-item {
+    position: relative;
+    margin-bottom: 4px;
+    margin-left: -4%;
+    border-radius: 10px;
+    padding-left: 8px;
+    padding-right: 5px;
+  }
+  .sidebar-list-item a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px -0px;
+    color: var(--sidebar-link);
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 26px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  .sidebar-list-item svg {
+    margin-right: 14px;
+  }
+  .sidebar-list-item:hover {
+    background-color: var(--sidebar-active-link);
+    
+   
+  }
+  .sidebar-list-item.active {
+    background-color: var(--sidebar-active-link);
+    
+  }
+  .sidebar-list-item.active:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    background-color: var(--action-color);
+    height: 100%;
+    width: 0%;
+  }
+
+
+  @media (max-width: 968px) {
+    .sidebar-list-item a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px -0px;
+        color: var(--sidebar-link);
+        text-decoration: none;
+        font-size: 11px;
+        line-height: 20px;
+      
+        font-family:Arial, Helvetica, sans-serif;
+      }
+}
+
+@media (max-width: 768px) {
+    .sidebar-list-item a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px -0px;
+        color: var(--sidebar-link);
+        text-decoration: none;
+        font-size: 8px;
+        line-height: 10px;
+      color: red;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+}
+
+@media (max-width: 668px) {
+    .sidebar-list-item a {
+        display: none;
+        
+      }
+}
+
+@media (max-height: 650px) {
+    .sidebar-list-item a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px -0px;
+        color: var(--sidebar-link);
+        text-decoration: none;
+        font-size: 9px;
+        line-height: 10px;
+        font-family:Arial, Helvetica, sans-serif;
+      }
+        
+      }
+
+
+@media (max-height: 600px) {
+    .sidebar-list-item a {
+        display: none;
+      }
+        
+      }
+
+
+.grid-container >div:hover{
+    background-color: blue;
+    
+}
+
+.textModal{
+  font-weight: bold;
+  color:#04236b;
+  float: center;
+}
+.formulaire{
+  
+}
+
+.monTable thead{
+  background-color: #56626E;
+ 
+}
+.monTable thead tr th{
+  color:black;
+}
+.caseLogo{
+  margin-top: 4px;
+  margin-left: -13px;
+  margin-bottom: -10px;
+}
+
+

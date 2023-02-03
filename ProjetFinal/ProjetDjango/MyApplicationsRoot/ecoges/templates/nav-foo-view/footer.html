@@ -1,0 +1,48 @@
+
+     <!--section du footer-->
+     {% extends 'templates/Secretary-view/classeContent.html' %}
+     <section id="topMenu-pd" class="navbar navbar-expand-lg navbar-light  fixed-bottom footerNavBar">
+      <div class="collapse navbar-collapse container-fluid clearfix  d-flex justify-content-between footsect" id="navbarSupportedContent">
+          
+          <span class="text-muted d-block text-center text-sm-left d-sm-inline-block curseur">Copyright © 2022 <a href="#" target="" style="color: blue;">CEG de Siankoro</a>. All rights reserved.</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center footer" >School Management Software realized by 
+              <div class="w3-dropdown-click myinfos "><button onclick="myFunction()" style="font-weight: bold; margin-left: 2px;" class="btn btn-link">KEITA </button> 
+                <div id="Demo" class="w3-dropdown-content w3-card-4 w3-top " style=" width:18.6%; margin-right: 20%; margin-top: 20%;">
+                  <img src="{% static 'images/img1.jpg' %}" alt="KEITA" style="width:90%; margin-top: 5px;">
+                  <div class="w3-container">
+                    <p style="text-align:justify ; font-size: 12px;"><span style="font-weight: bold;">KEITA Zakaria Cheick Oumar</span>  est  
+                         Ingénieur de Travaux en Génie Logiciel
+                        et Developpeur FullStack.
+                    </p>
+                    
+                    <hr style="margin-top: -10px;">
+                    <P style="text-align:justify ;font-size: 12px;margin-top: -10px; font-weight: bold;">Contact:</P>
+                    <p style="text-align:justify ; font-size: 12px;margin-top: -10px;"> +226 64329081 / +226 61455550 
+                      Zakariacheickoumarkeita@gmail.com</p>
+                    
+                  </div>
+                </div>
+              </div>
+            
+      </div>
+  </section>
+ 
+  <script>
+    function myFunction() {
+      var x = document.getElementById("Demo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    </script>
+    
+    <script>
+      // Add the following code if you want the name of the file appear on select
+      $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+      });
+      </script>
+   
